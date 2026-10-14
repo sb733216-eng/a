@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1c5a27">
+<title>Köken Fındık | Doğrudan Üreticiden Taze Karadeniz Fındığı</title>
+<meta name="description" content="Kırma, kavurma, ezme, paketleme: taze Karadeniz fındığını WhatsApp ile kolayca sipariş edin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="site-top">
+<div class="announce" id="topShippingBanner">
+  <span class="announce__text" id="topShippingText">750 TL ve Üzeri Siparişlerde Kargo Ücretsiz! | Doğrudan Üreticiden Taze Karadeniz Fındığı</span>
+  <span class="announce__bar" aria-hidden="true"><span id="topShippingBar"></span></span>
+</div>
+
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#" class="brand" aria-label="Köken Fındık ana sayfa">
+      <img class="brand__logo" src="logo.jpg" alt="" width="56" height="56">
+      <span class="brand__text">
+        <span class="brand__name">Köken Fındık</span>
+        <span class="brand__slogan">Fındığın Kökünden Gelen Lezzet</span>
+      </span>
+    </a>
+    <button type="button" class="cart-btn" id="openCart" aria-label="Sepeti aç">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+  </div>
+  <div class="filters-bar">
+    <div class="container">
+      <nav class="filters" id="filters" aria-label="Ürün kategorileri">
+        <button type="button" data-f="all" aria-pressed="true">Tümü</button>
+        <button type="button" data-f="kavrulmus" aria-pressed="false">Kavrulmuş</button>
+        <button type="button" data-f="cig" aria-pressed="false">Çiğ</button>
+        <button type="button" data-f="ezme" aria-pressed="false">Ezme</button>
+        <button type="button" data-f="paketleme" aria-pressed="false">Paketleme</button>
+      </nav>
+    </div>
+  </div>
+</header>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1>Doğadan Sofranıza Taze Karadeniz Fındığı</h1>
+        <p>Bahçeden gelen fındığı kendi tesisimizde işliyor, siparişinize göre paketliyoruz. Siparişinizi WhatsApp'tan saniyeler içinde iletin.</p>
+        <ul class="trust" aria-label="Üretim aşamaları">
+          <li>🔨 Kırma</li><li>🔥 Kavurma</li><li>🫙 Ezme</li><li>📦 Paketleme</li>
+        </ul>
+        <a href="#urunler" class="btn btn--light">Ürünleri Gör</a>
+      </div>
+      <div class="hero__media">
+        <img src="hero.jpg" alt="Taze Karadeniz fındığı" width="640" height="480">
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="urunler">
+    <div class="container">
+      <h2>Ürünlerimiz</h2>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+ <section class="assure" aria-label="Güvencelerimiz">
+  <div class="container assure__inner">
+    <div class="assure__item">
+      <span class="assure__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+      <div><strong>Orijinal Üretici</strong><small>Doğrudan üreticiden, aracısız</small></div>
+    </div>
+    <div class="assure__item">
+      <span class="assure__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+      <div><strong>Hızlı Kargo</strong><small>Siparişiniz hızla kargoya verilir</small></div>
+    </div>
+    <div class="assure__item">
+      <span class="assure__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+      <div><strong>Güvenli Paketleme</strong><small>Hava almayan, hijyenik ambalaj</small></div>
+    </div>
+  </div>
+</section>
+<div class="container footer__inner">
+    <div>
+      <h4>Kurumsal</h4>
+      <ul>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="uretim-tesisimiz.html">Üretim Tesisimiz</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Müşteri Hizmetleri</h4>
+      <ul>
+        <li><a href="siparis-takibi.html">Sipariş Takibi</a></li>
+        <li><a href="teslimat-ve-kargo.html">Teslimat ve Kargo</a></li>
+        <li><a href="iptal-ve-iade.html">İptal ve İade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Yasal Bilgiler</h4>
+      <ul>
+        <li><a href="kvkk.html">KVKK Aydınlatma Metni</a></li>
+        <li><a href="mesafeli-satis-sozlesmesi.html">Mesafeli Satış Sözleşmesi</a></li>
+        <li><a href="cerez-politikasi.html">Gizlilik ve Çerez Politikası</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>İletişim</h4>
+      <address>
+        <p>Adres: Kökenli, Tokat Ordu Yolu No:34, 52000 Altınordu/Ordu</p>
+        <p>Telefon: <a href="tel:+905313385955">0531 338 59 55</a></p>
+        <p>WhatsApp Hattı: <a href="https://wa.me/905313385955" target="_blank" rel="noopener">0531 338 59 55</a></p>
+      </address>
+    </div>
+  </div>
+  <div class="footer__copy">© 2026 Köken Fındık · Kırma, Kavurma, Ezme, Paketleme. Tüm hakları saklıdır.</div>
+</footer>
+
+<!-- SEPET -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Sepet" aria-hidden="true">
+  <div class="drawer__head"><h3>Sepetim</h3><button type="button" class="x" id="closeCart" aria-label="Sepeti kapat">&times;</button></div>
+  <div class="ship" id="ship">
+    <p><span id="shipText"></span><span id="shipPct"></span></p>
+    <div class="bar"><span id="shipBar"></span></div>
+  </div>
+  <ul class="drawer__items" id="cartItems"></ul>
+  <div class="drawer__foot">
+    <div class="row"><span>Ara toplam</span><span id="subTotal">0 TL</span></div>
+    <div class="row"><span>Kargo</span><span id="shipCost">—</span></div>
+    <div class="row row--total"><span>Genel toplam</span><strong id="grandTotal">0 TL</strong></div>
+    <button type="button" class="btn btn--primary btn--block btn--lg" id="checkoutBtn" disabled>Siparişi Tamamla</button>
+  </div>
+</aside>
+
+<!-- TESLİMAT BİLGİLERİ -->
+<div class="modal" id="checkout" aria-hidden="true">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+    <div class="drawer__head"><h3 id="coTitle">Teslimat bilgileri</h3><button type="button" class="x" data-close aria-label="Kapat">&times;</button></div>
+    <div class="modal__body">
+      <div class="summary">
+        <ul id="coList"></ul>
+        <div class="row"><span>Kargo</span><span id="coShip"></span></div>
+        <div class="row row--total"><span>Genel toplam</span><strong id="coTotal"></strong></div>
+      </div>
+      <form id="orderForm" class="form" novalidate>
+        <label>Ad Soyad *<input name="name" autocomplete="name" required minlength="3" maxlength="80"></label>
+        <label>Telefon Numarası *<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="05xx xxx xx xx" pattern="^(\+90|0)?\s?5\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$" title="Örnek: 05xx xxx xx xx"></label>
+        <div class="two">
+          <label>İl *<select name="city" required autocomplete="address-level1"><option value="">İl seçin</option></select></label>
+          <label>İlçe *<select name="district" required disabled autocomplete="address-level2"><option value="">Önce il seçin</option></select></label>
+        </div>
+        <label>Açık Adres *<textarea name="address" rows="3" required minlength="10" maxlength="250" autocomplete="street-address" placeholder="Mahalle, sokak, bina ve daire no"></textarea></label>
+        <label>Sipariş Notu <small>(opsiyonel)</small><textarea name="note" rows="2" maxlength="300"></textarea></label>
+        <p class="form__err" id="formErr" role="alert"></p>
+        <button type="submit" class="btn btn--wa btn--block btn--lg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zM16.5 13.9c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.700 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.2-.2-.5-.3z"/></svg>
+          WhatsApp ile Siparişi Gönder
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- BİLGİLENDİRME -->
+<div class="modal" id="sent" aria-hidden="true">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box modal__box--sm" role="dialog" aria-modal="true" aria-labelledby="sentTitle">
+    <div class="modal__body ok">
+      <div class="ok__icon">✓</div>
+      <h3 id="sentTitle">Siparişiniz WhatsApp'a aktarıldı</h3>
+      <p>Sipariş özeti mesaj olarak hazırlandı. Siparişinizin bize ulaşması için WhatsApp'ta <strong>Gönder</strong> tuşuna basmayı unutmayın.</p>
+      <p class="ok__fb">WhatsApp açılmadıysa <a id="waFallback" href="#" target="_blank" rel="noopener">buraya tıklayın</a>.</p>
+      <button type="button" class="btn btn--primary btn--block" data-close>Alışverişe devam et</button>
+    </div>
+  </div>
+</div>
+
+<!-- ÜRÜN DETAY -->
+<div class="modal" id="detail" aria-hidden="true">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box modal__box--xl" role="dialog" aria-modal="true" aria-labelledby="dName">
+    <button type="button" class="x x--float" data-close aria-label="Kapat">&times;</button>
+    <div class="detail">
+      <div class="detail__media">
+        <img id="dImg" alt="" width="640" height="640">
+        <span class="chip" id="dChip"></span>
+      </div>
+      <div class="detail__info">
+        <h3 id="dName"></h3>
+        <p class="detail__price" id="dPrice"></p>
+		        <ul class="badges" aria-label="Ürün özellikleri"><li>Glutensiz</li><li>Katkısız</li><li>%100 Doğal</li></ul>
+                    <ul class="badges badges--earth" id="dCatBadges" hidden></ul>
+        <p class="detail__desc" id="dDesc"></p>
+        <section class="detail__sec" id="dIngSec"><h4>İçindekiler</h4><p id="dIng"></p></section>
+                <dl class="info">
+          <div><dt>Saklama Koşulları</dt><dd>Serin, kuru yerde 18-25°C'de muhafaza ediniz.</dd></div>
+          <div><dt>Raf Ömrü</dt><dd>Tazeliğini 12 ay korur.</dd></div>
+          <div><dt>Alerjen Uyarısı</dt><dd>Fındık içerir.</dd></div>
+        </dl>
+                <section class="detail__sec" id="dFaq" hidden>
+          <h4>Sık Sorulan Sorular</h4>
+          <div class="faq" id="faqList"></div>
+        </section>
+        <div class="detail__buy">
+          <div class="qty qty--lg">
+            <button type="button" id="dMinus" aria-label="Adedi azalt">−</button>
+            <span id="dQty" aria-live="polite">1</span>
+            <button type="button" id="dPlus" aria-label="Adedi arttır">+</button>
+          </div>
+          <button type="button" class="btn btn--primary btn--lg" id="dAdd">Sepete Ekle</button>
+        </div>
+                <p class="micro">📦 Özel korumalı ambalaj. Kırılma garantili gönderim; hasarlı ürünler sorgusuz yenilenir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- YASAL METİNLER -->
+<div class="modal" id="legal" aria-hidden="true">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <div class="drawer__head"><h3 id="legalTitle"></h3><button type="button" class="x" data-close aria-label="Kapat">&times;</button></div>
+    <div class="modal__body legal" id="legalBody"></div>
+  </div>
+</div>
+
+
+
+<div class="toast" id="addToast" role="status" aria-live="polite">
+  <p class="toast__msg"><span class="toast__ic" aria-hidden="true">✓</span><span id="toastMsg">Sepete eklendi</span></p>
+  <div class="toast__actions">
+    <button type="button" class="btn btn--primary" id="toastCheckout">Alışverişi Bitir</button>
+    <button type="button" class="btn btn--ghost" id="toastContinue">Devam Et</button>
+  </div>
+  <span class="toast__timer" aria-hidden="true"></span>
+</div>
+
+
+<script src="script.js" defer></script>
+</body>
+<a class="wa-float" href="https://wa.me/905313385955?text=Merhaba%2C%20%C3%BCr%C3%BCnleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geç"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zM16.5 13.9c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg></a>
+
+</html>

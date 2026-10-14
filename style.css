@@ -1,0 +1,385 @@
+:root{--green:#1c5a27;--green-d:#14421c;--green-s:#e6efe7;--brown:#8d5b4c;--brown-s:#f1e6e2;--cream:#f9f8f6;--white:#fff;--text:#2a2a26;--muted:#6d6b64;--line:#e7e3dc;--err:#b3261e;--wa:#1a9a52;--wa-d:#148045;--head:'Fraunces',Georgia,serif;--body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;font-family:var(--body);background:var(--cream);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body.no-scroll{overflow:hidden}
+img{max-width:100%;display:block}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4,p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--brown);outline-offset:2px}
+.container{width:min(1140px,100% - 2rem);margin-inline:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.7rem 1.2rem;border:0;border-radius:999px;font-weight:600;font-size:.95rem;transition:background .2s,transform .15s}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--green);color:var(--white)}
+.btn--primary:hover{background:var(--green-d)}
+.btn--wa{background:var(--wa);color:var(--white)}
+.btn--wa:hover{background:var(--wa-d)}
+.btn--light{background:var(--white);color:var(--green);padding:.9rem 1.8rem}
+.btn--block{width:100%}
+.btn--lg{padding:1rem;font-size:1rem}
+.btn:disabled{background:#c9d3ca;cursor:not-allowed;transform:none}
+.btn.added{background:var(--brown)}
+
+.announce{background:#1c5a27;color:var(--white);text-align:center;font-size:.85rem;font-weight:500;padding:.55rem 1rem}
+
+.header{position:sticky;top:0;z-index:50;background:rgba(249,248,246,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:70px}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--head);font-size:1.35rem;font-weight:700;color:var(--green);white-space:nowrap}
+.brand img{width:42px;height:42px;object-fit:contain;border-radius:50%}
+.filters{display:flex;gap:.5rem}
+.filters button{border:1.5px solid var(--line);background:var(--white);color:var(--text);padding:.4rem 1rem;border-radius:999px;font-weight:600;font-size:.9rem;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.filters button:hover{border-color:var(--green)}
+.filters button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:var(--white)}
+.cart-btn{position:relative;display:grid;place-items:center;flex:none;width:46px;height:46px;background:var(--green);color:var(--white);border:0;border-radius:50%}
+.cart-btn:hover{background:var(--green-d)}
+.cart-btn.bump{animation:bump .35s}
+@keyframes bump{40%{transform:scale(1.15)}}
+.badge{position:absolute;top:-5px;right:-5px;min-width:22px;height:22px;padding:0 6px;display:grid;place-items:center;background:var(--brown);color:var(--white);border:2px solid var(--cream);border-radius:999px;font-size:.75rem;font-weight:700;transform:scale(0);transition:transform .2s}
+.badge.on{transform:scale(1)}
+
+.hero{background:linear-gradient(135deg,var(--green),var(--green-d));color:var(--white);padding:4.5rem 0}
+.hero h1{font-family:var(--head);font-size:clamp(2rem,6vw,3.5rem);line-height:1.12;max-width:740px;margin-bottom:1rem}
+.hero p{max-width:580px;opacity:.92;margin-bottom:1.4rem;font-size:1.1rem}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.8rem}
+.trust li{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);padding:.45rem 1rem;border-radius:999px;font-weight:500;font-size:.92rem}
+
+.products{padding:4rem 0 5rem}
+.products h2{font-family:var(--head);color:var(--green);font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(28,90,39,.12)}
+.card[hidden]{display:none}
+.card__img{aspect-ratio:4/3;display:grid;place-items:center;background:linear-gradient(135deg,var(--brown-s),#ead9d2);font-size:4rem}
+.card__body{padding:1.1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card h3{font-family:var(--head);font-size:1.1rem;line-height:1.3}
+.chip{width:fit-content;background:var(--green-s);color:var(--green);padding:.1rem .7rem;border-radius:999px;font-size:.8rem;font-weight:600}
+.card__bottom{margin-top:auto;padding-top:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.price{font-size:1.35rem;font-weight:700;color:var(--brown)}
+
+.footer{background:var(--green-d);color:rgba(255,255,255,.85)}
+.footer__inner{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;padding:2.5rem 0 1.5rem}
+.footer h4{font-family:var(--head);color:var(--white);font-size:1.15rem;margin-bottom:.5rem}
+.footer__copy{text-align:center;padding:1rem;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;opacity:.75}
+
+/* Sepet */
+.overlay{position:fixed;inset:0;z-index:90;background:rgba(20,30,20,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:100;width:min(420px,100%);background:var(--cream);display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(.22,.8,.3,1),visibility .35s;box-shadow:-10px 0 40px rgba(0,0,0,.15)}
+.drawer.on{transform:none;visibility:visible}
+.drawer__head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;background:var(--white);border-bottom:1px solid var(--line)}
+.drawer__head h3{font-family:var(--head);color:var(--green);font-size:1.25rem}
+.x{width:38px;height:38px;border:0;border-radius:50%;background:var(--green-s);color:var(--green);font-size:1.6rem;line-height:1}
+.x:hover{background:var(--green);color:var(--white)}
+
+.ship{padding:.9rem 1.3rem;background:var(--white);border-bottom:1px solid var(--line)}
+.ship p{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;font-weight:600;margin-bottom:.5rem;color:var(--brown)}
+.ship.free p{color:var(--green)}
+.bar{height:10px;background:var(--green-s);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2e7d3a,var(--green));border-radius:999px;transition:width .4s ease}
+
+.drawer__items{flex:1;overflow-y:auto;padding:.5rem 1.3rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 0}
+.cart-item{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px dashed var(--line)}
+.cart-item strong{display:block;font-size:.95rem;line-height:1.35}
+.cart-item small{color:var(--brown);font-weight:600}
+.side{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
+.qty{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.2rem}
+.qty button{width:28px;height:28px;border:0;border-radius:50%;background:var(--green-s);color:var(--green);font-size:1.1rem;font-weight:700;line-height:1}
+.qty button:hover{background:var(--green);color:var(--white)}
+.qty span{min-width:18px;text-align:center;font-weight:600}
+.del{background:none;border:0;padding:0;color:var(--muted);font-size:.8rem;text-decoration:underline}
+.del:hover{color:var(--err)}
+
+.drawer__foot{padding:1.1rem 1.3rem 1.4rem;background:var(--white);border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;padding:.15rem 0}
+.row .free{color:var(--green);font-weight:700}
+.row--total{margin:.5rem 0 1rem;padding-top:.6rem;border-top:1px solid var(--line);font-weight:600;font-size:1.05rem}
+.row--total strong{font-size:1.45rem;color:var(--green)}
+
+/* Modallar */
+.modal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:1rem;visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s}
+.modal.on{visibility:visible;opacity:1}
+.modal__bg{position:absolute;inset:0;background:rgba(20,30,20,.6)}
+.modal__box{position:relative;width:min(560px,100%);max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem);display:flex;flex-direction:column;background:var(--cream);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.3);transform:translateY(16px);transition:transform .3s}
+.modal.on .modal__box{transform:none}
+.modal__box--sm{width:min(440px,100%)}
+.modal__body{padding:1.2rem 1.4rem 1.5rem;overflow-y:auto}
+
+.summary{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;margin-bottom:1.2rem}
+.summary li{display:flex;justify-content:space-between;gap:1rem;padding:.3rem 0;font-size:.9rem;border-bottom:1px dashed var(--line)}
+.summary li span:last-child{white-space:nowrap;font-weight:600}
+.summary .row--total{margin-bottom:0}
+
+.form{display:grid;gap:1rem}
+.form label{display:flex;flex-direction:column;gap:.3rem;font-size:.85rem;font-weight:600;min-width:0}
+.form small{font-weight:400;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form input,.form textarea{width:100%;padding:.75rem .9rem;font:inherit;font-size:1rem;font-weight:400;color:var(--text);background:var(--white);border:1.5px solid var(--line);border-radius:10px}
+.form textarea{resize:vertical}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(28,90,39,.15)}
+.form .bad{border-color:var(--err)}
+.form__err{min-height:1.2rem;font-size:.9rem;font-weight:500;color:var(--err)}
+
+.ok{text-align:center}
+.ok__icon{width:68px;height:68px;margin:0 auto 1rem;display:grid;place-items:center;background:var(--green);color:var(--white);border-radius:50%;font-size:2rem;animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(0)}}
+.ok h3{font-family:var(--head);color:var(--green);font-size:1.5rem;margin-bottom:.6rem}
+.ok p{color:var(--muted);margin-bottom:.8rem}
+.ok__fb a{color:var(--green);font-weight:600;text-decoration:underline}
+.ok .btn{margin-top:.6rem}
+
+@media (max-width:860px){
+  .header__inner{flex-wrap:wrap;padding:.5rem 0}
+  .brand{order:1}.cart-btn{order:2}
+  .filters{order:3;width:100%;overflow-x:auto;padding:.1rem 0 .3rem;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+}
+@media (max-width:560px){
+  .brand{font-size:1.15rem}
+  .hero{padding:3rem 0}
+  .products{padding:3rem 0 4rem}
+  .footer__inner{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .modal{padding:0;align-items:end}
+  .modal__box,.modal__box--sm{width:100%;max-height:94dvh;border-radius:18px 18px 0 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ===== Güncelleme: header, hero, kartlar, select ===== */
+html{scroll-padding-top:140px}
+.header{background:rgba(249,248,246,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.header__inner{align-items:center;flex-wrap:nowrap;padding:0;min-height:72px}
+.brand{align-items:center;line-height:1}
+.brand img{width:44px;height:44px;object-fit:cover;border-radius:50%;background:var(--white)}
+.cart-btn{align-self:center}
+.filters-bar{border-top:1px solid var(--line)}
+.filters-bar .filters{width:auto;padding:.55rem 0;overflow-x:auto;scrollbar-width:none}
+.filters-bar .filters::-webkit-scrollbar{display:none}
+
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.hero h1{max-width:none}
+.hero p{max-width:540px}
+.hero__media{position:relative;aspect-ratio:4/3;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.1);border:4px solid rgba(255,255,255,.2);box-shadow:0 24px 50px rgba(0,0,0,.3)}
+.hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.card{box-shadow:0 2px 10px rgba(28,90,39,.06)}
+.card:hover{box-shadow:0 16px 36px rgba(28,90,39,.16)}
+.card__img{position:relative;display:block;overflow:hidden;font-size:inherit}
+.card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .card__img img{transform:scale(1.06)}
+.tag{position:absolute;top:.75rem;left:.75rem;z-index:1;background:var(--green);color:var(--white);font-size:.75rem;font-weight:600;padding:.25rem .75rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.rating{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--muted)}
+.rating .stars{color:#d9a21b;letter-spacing:.08em}
+.rating b{color:var(--text)}
+
+.form select{width:100%;padding:.75rem 2.4rem .75rem .9rem;font:inherit;font-size:1rem;font-weight:400;color:var(--text);background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231c5a27' stroke-width='2'/%3E%3C/svg%3E") no-repeat right .9rem center/12px;border:1.5px solid var(--line);border-radius:10px;-webkit-appearance:none;appearance:none}
+.form select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(28,90,39,.15)}
+.form select:disabled{background-color:#f2f0ec;color:var(--muted);cursor:not-allowed}
+
+@media (max-width:860px){
+  .hero__grid{grid-template-columns:1fr;gap:2rem}
+  .hero__media{aspect-ratio:16/10}
+  html{scroll-padding-top:130px}
+}
+
+/* ===== Güncelleme: kart aksiyonları, ürün detay modalı ===== */
+[data-view]{cursor:pointer}
+.grid__msg{grid-column:1/-1;text-align:center;color:var(--muted);padding:2.5rem 0}
+.btn--ghost{background:var(--white);color:var(--green);border:1.5px solid var(--green)}
+.btn--ghost:hover{background:var(--green-s)}
+.card__bottom{display:flex;flex-direction:column;align-items:stretch;gap:.7rem;flex-wrap:nowrap}
+.card__actions{display:grid;grid-template-columns:1fr 1.4fr;gap:.5rem}
+.card__actions .btn{padding:.65rem .5rem;font-size:.9rem;white-space:nowrap}
+
+.modal__box--xl{width:min(900px,100%)}
+.x--float{position:absolute;top:.8rem;right:.8rem;z-index:3;background:rgba(255,255,255,.94);box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.detail{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;overflow-y:auto}
+.detail__media{position:relative;min-height:400px;background:linear-gradient(135deg,var(--brown-s),#ead9d2)}
+.detail__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.detail__media .chip{position:absolute;left:1rem;bottom:1rem;z-index:1;background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.15);padding:.25rem .9rem;font-size:.85rem}
+.detail__media .chip[hidden],.detail__media img[hidden]{display:none}
+.detail__info{padding:1.8rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:1rem;min-width:0}
+.detail__info h3{font-family:var(--head);font-size:1.6rem;line-height:1.2;color:var(--green);padding-right:2.6rem}
+.detail__price{font-size:1.6rem;font-weight:700;color:var(--brown)}
+.detail__desc{color:var(--muted)}
+.detail__sec[hidden],.detail__desc[hidden]{display:none}
+.detail__sec h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--green);margin-bottom:.35rem}
+.detail__sec p{font-size:.92rem;color:var(--text)}
+.detail__buy{display:flex;align-items:center;gap:.8rem;margin-top:auto;padding-top:.5rem}
+.detail__buy .btn{flex:1}
+.qty--lg{padding:.25rem}
+.qty--lg button{width:38px;height:38px;font-size:1.3rem}
+.qty--lg span{min-width:30px;font-size:1.05rem}
+
+@media (max-width:700px){
+  .detail{grid-template-columns:1fr;display:block}
+  .detail__media{min-height:0;aspect-ratio:4/3}
+  .detail__info{padding:1.3rem 1.2rem 1.5rem}
+  .detail__buy{position:sticky;bottom:0;background:var(--cream);padding:.8rem 0 .2rem;border-top:1px solid var(--line)}
+}
+
+/* ===== Güncelleme: ürün bilgileri, güven bandı, 4 sütunlu footer, yasal modal ===== */
+.badges{display:flex;flex-wrap:wrap;gap:.45rem}
+.badges li{display:inline-flex;align-items:center;gap:.35rem;background:var(--green-s);color:var(--green);font-size:.8rem;font-weight:600;padding:.25rem .75rem;border-radius:999px}
+.badges li::before{content:"✓";font-weight:700}
+.info{margin:0;display:grid}
+.info div{display:grid;grid-template-columns:9.5rem 1fr;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.info dt{color:var(--muted);font-weight:500}
+.info dd{margin:0;font-weight:600}
+
+.assure{background:var(--white);border-top:1px solid var(--line)}
+.assure__inner{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1.5rem 0}
+.assure__item{display:flex;align-items:center;gap:.9rem}
+.assure__ic{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--green-s);color:var(--green)}
+.assure__item strong{display:block;font-size:.98rem}
+.assure__item small{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+
+.footer__inner{grid-template-columns:repeat(4,1fr);gap:2rem}
+.footer ul li{margin-bottom:.5rem}
+.footer a{color:rgba(255,255,255,.85);font-size:.92rem}
+.footer a:hover{color:var(--white);text-decoration:underline}
+.footer address{font-style:normal;font-size:.92rem;line-height:1.75}
+
+.legal{font-size:.92rem;color:var(--muted)}
+.legal h4{color:var(--text);font-size:.95rem;margin:1.1rem 0 .3rem}
+.legal p{margin-bottom:.5rem}
+.legal ul{list-style:disc;padding-left:1.2rem;margin-bottom:.5rem}
+.legal li{margin-bottom:.35rem}
+.legal strong{color:var(--text)}
+.legal .note{background:var(--brown-s);color:var(--brown);padding:.6rem .8rem;border-radius:8px;font-weight:500;font-size:.85rem;margin-bottom:.4rem}
+
+@media (max-width:860px){
+  .footer__inner{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .info div{grid-template-columns:1fr;gap:.1rem}
+  .assure__inner{grid-template-columns:1fr;gap:.9rem}
+}
+@media (max-width:480px){
+  .footer__inner{grid-template-columns:1fr}
+}
+/* ===== Güncelleme: premium marka alanı ===== */
+.header__inner .brand{flex:0 1 auto;min-width:0;gap:.8rem;font-size:inherit;line-height:1}
+.brand .brand__logo{width:56px;height:56px;border-radius:50%;object-fit:cover;background:var(--white);box-shadow:0 0 0 2px var(--white),0 2px 10px rgba(28,90,39,.18)}
+.brand__text{display:flex;flex-direction:column;justify-content:center;gap:.3rem;min-width:0}
+.brand__name{font-family:var(--head);font-size:1.45rem;font-weight:700;letter-spacing:-0.5px;line-height:1;color:var(--green)}
+/* #c29b38 küçük yazıda düşük kontrast verdiği için koyulaştırıldı; birebir istenirse #c29b38 yazın */
+.brand__slogan{font-family:var(--body);font-size:.75rem;font-weight:500;font-style:italic;letter-spacing:.8px;line-height:1;color:#8a6914;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:480px){
+  .brand .brand__logo{width:46px;height:46px}
+  .brand__name{font-size:1.2rem}
+  .brand__slogan{font-size:.62rem;letter-spacing:.3px}
+}
+
+/* ===== Güncelleme: yüzen WhatsApp adası ===== */
+.wa-island{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:110;display:inline-flex;align-items:center;gap:.65rem;padding:.4rem 1.15rem .4rem .4rem;background:var(--white);color:var(--text);border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 30px rgba(20,60,30,.22);font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,right .3s,bottom .3s}
+.wa-island:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,60,30,.3)}
+.wa-island:active{transform:scale(.97)}
+.wa-island__ic{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:var(--wa);color:var(--white)}
+.pulse{position:relative;flex:none;width:10px;height:10px;border-radius:50%;background:#22c55e}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:#22c55e;animation:ping 1.8s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(2.6);opacity:0}}
+/* Sepet açıkken çekmecedeki butonların üstünü kapatmasın */
+body:has(.drawer.on) .wa-island{right:calc(min(420px,100%) + 1.2rem)}
+@media (max-width:560px){
+  .wa-island{font-size:.9rem;padding-right:1rem}
+  body:has(.drawer.on) .wa-island{right:max(1rem,env(safe-area-inset-right));bottom:15.5rem}
+}
+
+/* ===== Rozetler, kırılma garantisi mikro metni, akordiyon SSS ===== */
+.badges[hidden]{display:none}
+.badges--earth li{background:var(--brown-s);color:var(--brown)}
+.badges--sm{gap:.3rem}
+.badges--sm li{font-size:.7rem;padding:.12rem .55rem}
+.micro{font-size:.8rem;line-height:1.5;color:var(--muted)}
+.drawer__foot .row--total{margin-bottom:.6rem}
+.micro--cart{margin:0 0 1rem}
+
+.faq{display:grid}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;background:none;border:0;text-align:left;font-size:.92rem;font-weight:600;color:var(--text)}
+.faq__q:hover{color:var(--green)}
+.faq__ic{position:relative;flex:none;width:14px;height:14px}
+.faq__ic::before,.faq__ic::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--green);border-radius:2px;transition:transform .25s}
+.faq__ic::after{transform:rotate(90deg)}
+.faq__item.open .faq__ic::after{transform:rotate(0)}
+.faq__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s ease}
+.faq__a > div{overflow:hidden}
+.faq__item.open .faq__a{grid-template-rows:1fr}
+.faq__a p{padding:0 0 .9rem;font-size:.9rem;color:var(--muted)}
+
+/* ===== Alt sayfalar ===== */
+.back-link{flex:none;padding:.5rem .95rem;border:1.5px solid var(--green);border-radius:999px;font-size:.95rem;font-weight:600;color:var(--green);white-space:nowrap;transition:background .2s,color .2s}
+.back-link:hover{background:var(--green);color:var(--white)}
+.doc{max-width:820px;margin:0 auto;padding:2.5rem 0 4rem}
+.doc h1{font-family:var(--head);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;color:var(--green);margin-bottom:.5rem}
+.doc .lead{font-size:1.05rem;color:var(--muted);margin-bottom:1.6rem}
+.doc h2{font-family:var(--head);font-size:1.2rem;color:var(--text);margin:1.8rem 0 .5rem}
+.doc p{margin-bottom:.8rem}
+.doc ul,.doc ol{margin:0 0 .9rem;padding-left:1.3rem}
+.doc ul{list-style:disc}
+.doc ol{list-style:decimal}
+.doc li{margin-bottom:.35rem}
+.doc a{color:var(--green);text-decoration:underline}
+.doc a.btn{color:var(--white);text-decoration:none;margin:.4rem 0 1rem}
+.doc .note{margin-bottom:1.4rem;padding:.7rem .9rem;background:var(--brown-s);color:var(--brown);border-radius:10px;font-size:.88rem;font-weight:500}
+@media (max-width:480px){
+  .sub-header .brand__slogan{display:none}
+  .back-link{padding:.45rem .75rem;font-size:.85rem}
+}
+
+/* ===== Global: yüzen WhatsApp butonu (tüm sayfalar) ===== */
+.wa-float{position:fixed;bottom:20px;right:20px;z-index:1000;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s,opacity .2s}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 10px 24px rgba(0,0,0,.32)}
+.wa-float svg{width:30px;height:30px;fill:currentColor}
+/* Sepet/modal açıkken butonların üstünü kapatmasın (ana sayfa) */
+body.no-scroll .wa-float{opacity:0;pointer-events:none}
+@media (max-width:768px){.wa-float{bottom:80px}}
+
+/* ===== Kart üzeri durumsal adet butonu ===== */
+.qty-control{display:flex;align-items:center;justify-content:space-between;gap:.2rem;min-height:44px;padding:.2rem;background:var(--green);color:var(--white);border-radius:999px}
+.qty-control button{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:var(--white);font-size:1.15rem;font-weight:700;line-height:1;transition:background .2s}
+.qty-control button:hover{background:rgba(255,255,255,.32)}
+.qty-control span{flex:1;text-align:center;font-weight:700;font-size:.95rem}
+
+/* ===== Global: yüzen WhatsApp butonu (tüm sayfalar) ===== */
+.wa-float{position:fixed;bottom:20px;right:20px;z-index:1000;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s,opacity .2s}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 10px 24px rgba(0,0,0,.32)}
+.wa-float svg{width:30px;height:30px;fill:currentColor}
+/* Sepet/modal açıkken butonların üstünü kapatmasın (ana sayfa) */
+body.no-scroll .wa-float{opacity:0;pointer-events:none}
+@media (max-width:768px){.wa-float{bottom:80px}}
+
+/* ===== Kart üzeri durumsal adet butonu ===== */
+.qty-control{display:flex;align-items:center;justify-content:space-between;gap:.2rem;min-height:44px;padding:.2rem;background:var(--green);color:var(--white);border-radius:999px}
+.qty-control button{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:var(--white);font-size:1.15rem;font-weight:700;line-height:1;transition:background .2s}
+.qty-control button:hover{background:rgba(255,255,255,.32)}
+.qty-control span{flex:1;text-align:center;font-weight:700;font-size:.95rem}
+
+/* ===== Kargo bandında ilerleme çubuğu ===== */
+.announce{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.announce__bar{display:block;width:min(340px,80%);height:6px;background:rgba(255,255,255,.25);border-radius:999px;overflow:hidden}
+.announce__bar span{display:block;height:100%;width:0;background:#f4d58d;border-radius:999px;transition:width .4s ease,background .3s}
+.announce.free .announce__bar span{background:#7ee08f}
+
+/* ===== Sepet geri bildirimi (3 sn) ===== */
+.toast{position:fixed;left:50%;bottom:24px;z-index:1100;width:min(440px,calc(100% - 2rem));display:grid;gap:.8rem;padding:1rem 1.1rem 1.15rem;background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 40px rgba(20,60,30,.28);overflow:hidden;visibility:hidden;opacity:0;transform:translate(-50%,16px);transition:opacity .25s,transform .25s,visibility .25s}
+.toast.on{visibility:visible;opacity:1;transform:translate(-50%,0)}
+.toast__msg{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.95rem}
+.toast__ic{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--green);color:var(--white);font-size:.85rem}
+.toast__actions{display:grid;grid-template-columns:1.2fr 1fr;gap:.5rem}
+.toast__actions .btn{padding:.65rem .6rem;font-size:.9rem}
+.toast__timer{position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--green);transform-origin:left;transform:scaleX(0)}
+.toast.on .toast__timer{animation:toastTimer 3s linear forwards}
+@keyframes toastTimer{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+
+/* ===== Kargo bandı + header birlikte sabit, büyük ilerleme çubuğu ===== */
+.site-top{position:sticky;top:0;z-index:50}
+.site-top .header{position:relative;top:auto}
+.announce{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:.35rem 1rem;padding:.5rem 1rem;font-size:.9rem}
+.announce__bar{flex:1 1 220px;width:auto;min-width:180px;max-width:420px;height:12px;background:rgba(255,255,255,.28)}
+html{scroll-padding-top:200px}
+@media (max-width:860px){html{scroll-padding-top:210px}}
